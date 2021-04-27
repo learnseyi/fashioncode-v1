@@ -1,1 +1,0 @@
-# fashioncode-v1
