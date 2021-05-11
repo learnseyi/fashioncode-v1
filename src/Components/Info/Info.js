@@ -29,12 +29,12 @@ const Info = () =>{
                                 ac posuere lacus pellentesque at. Suspendisse vulputate magna nibh, 
                                 vel ultrices turpis egestas in.</h5>
                                 <MDBBox className='text-left'>
-                               <MDBLink> &#62; &nbsp; &nbsp;  Free Debit Card</MDBLink>
-                               <MDBLink> &#62; &nbsp;&nbsp;   Electronic Transfer</MDBLink>
-                               <MDBLink> &#62;  &nbsp;&nbsp;  Free Debit Card</MDBLink>
+                               <MDBLink to='/'> &#62; &nbsp; &nbsp;  Free Debit Card</MDBLink>
+                               <MDBLink to='/'> &#62; &nbsp;&nbsp;   Electronic Transfer</MDBLink>
+                               <MDBLink to='/'> &#62;  &nbsp;&nbsp;  Free Debit Card</MDBLink>
                                </MDBBox>
                                <hr/>
-                               <MDBLink className='text-right'> Learn More</MDBLink>
+                               <MDBLink to='/' className='text-right'> Learn More</MDBLink>
                            </MDBCol>
                            </MDBRow>
                            </MDBContainer>
@@ -46,12 +46,12 @@ const Info = () =>{
                          vel ultrices turpis egestas in. Pellentesque mi dolor, tempor vitae semper non, elementum ut nisi. 
                         </h5>
                         <MDBBox className='text-left'>
-                               <MDBLink> Free Debit Card</MDBLink>
-                               <MDBLink> Free Debit Card</MDBLink>
-                               <MDBLink> Free Debit Card</MDBLink>
+                               <MDBLink to='/'> Free Debit Card</MDBLink>
+                               <MDBLink to='/'> Free Debit Card</MDBLink>
+                               <MDBLink to='/'> Free Debit Card</MDBLink>
                                </MDBBox>
                         <hr/>
-                        <MDBLink className='text-right'> Learn More</MDBLink>   
+                        <MDBLink to='/' className='text-right'> Learn More</MDBLink>   
                     </MDBCol>
             </MDBRow>
         </MDBContainer>

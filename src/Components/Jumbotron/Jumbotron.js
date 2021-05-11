@@ -10,6 +10,7 @@ import {
     MDBCardTitle,
      MDBIcon
      } from "mdbreact";
+     import './Jumbotron.css';
 
 const JumbotronPage = () => {
     const [image,setImage] = useState(Image[0]);
@@ -28,9 +29,7 @@ useEffect(()=>{
             })
             setImage(Image[index])
         }
-  console.log(index)
     },15000)
-    console.log('I was called')
 },[index])
   return (
     <section>
@@ -39,15 +38,13 @@ useEffect(()=>{
         <MDBCol >
         <MDBAnimation type="zoomIn" duration="4s" delay="2s" >
           <MDBJumbotron style={{ padding: 0 }}>
-      <MDBCol className="text-white text-center  px-4 " style={{ backgroundImage: `url(${image})`,backgroundSize: 'cover',
+      <MDBCol className=" text-center  px-4 " style={{ backgroundImage: `url(${image})`,backgroundSize: 'cover',
       backgroundRepeat:'no-repeat',maxWidth:'100%',height:'auto' ,backgroundPosition:'center'}}>
           <MDBAnimation type="slideInDown" duration="4s" delay="2s" >
               <MDBCol className="py-5">
-                <MDBCardTitle className="h1-responsive pt-3 m-5 font-bold">Create your beautiful website with MDBootstrap</MDBCardTitle>
-                <p className="mx-5 mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-                  optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos. Odit sed qui, dolorum!
-                </p>
-                <MDBBtn outline color="white" className="mb-5 " ><MDBIcon icon="clone" className="mr-2"></MDBIcon> View project</MDBBtn>
+                <MDBCardTitle className="h1-responsive  mt-5 font-bold heading">Slim's Financial</MDBCardTitle>
+                {/* <h4 className="mx-5 mb-5 font-bold">We make your financial dreams come true</h4> */}
+                <MDBBtn  color="success" className="mb-5 " ><MDBIcon icon="clone" className="mr-2 text-white"></MDBIcon>Join Us</MDBBtn>
               </MDBCol>
               </MDBAnimation>
             </MDBCol>

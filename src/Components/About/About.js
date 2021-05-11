@@ -42,9 +42,9 @@ const About = ()=>{
                 <MDBBox>
                     <Router>
                     <div  ref={wrapperRef}className= 'wrapper1'>
-                         <MDBLink className='border-bottom border-primary'>&#62;  Home</MDBLink>
-                         <MDBLink className='border-bottom border-primary'>&#62;  Home</MDBLink>
-                         <MDBLink className='border-bottom border-primary'>&#62;  Home</MDBLink>
+                         <MDBLink to='!#'className='border-bottom border-primary'>&#62;  Home</MDBLink>
+                         <MDBLink to='!#' className='border-bottom border-primary'>&#62;  Home</MDBLink>
+                         <MDBLink to='!#' className='border-bottom border-primary'>&#62;  Home</MDBLink>
                      </div>
                     </Router>
                 </MDBBox>

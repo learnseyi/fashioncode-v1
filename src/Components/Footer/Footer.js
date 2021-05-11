@@ -8,10 +8,9 @@ const FooterPage = () => {
         <MDBRow>
           <MDBCol md="6">
             <h5 className="title">Footer Content</h5>
-            <p>
-              Here you can use rows and columns here to organize your footer
-              content.
-            </p>
+            <h5>
+                About us
+            </h5>
           </MDBCol>
           <MDBCol md="6">
             <h5 className="title">Links</h5>
@@ -25,16 +24,13 @@ const FooterPage = () => {
               <li className="list-unstyled">
                 <a href="#!">Link 3</a>
               </li>
-              <li className="list-unstyled">
-                <a href="#!">Link 4</a>
-              </li>
             </ul>
           </MDBCol>
         </MDBRow>
       </MDBContainer>
       <div className="footer-copyright text-center py-3">
         <MDBContainer fluid>
-          &copy; {new Date().getFullYear()} Copyright: <a href="https://www.mdbootstrap.com"> MDBootstrap.com </a>
+          &copy; {new Date().getFullYear()} Copyright: <a href="#Home"> Slim's Financial </a>
         </MDBContainer>
       </div>
     </MDBFooter>

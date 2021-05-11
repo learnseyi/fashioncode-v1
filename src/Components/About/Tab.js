@@ -14,21 +14,13 @@ const Tab = () =>{
     const tab2Ref = useRef();
     const curRef = useRef({className:'click'})
     const cur2Ref = useRef();
-    // const toggle = tab => e => {
-    //     if (activeItem !== tab) {
-    //       setActiveItem({
-    //         activeItem: tab
-    //       });
-    //     }
-    //   };
       const handleTab = (e)=>{
           const activeBtn = tabRef.current
           const activeBtn2 = tab2Ref.current;
           const curBtn = curRef.current;
           const cur2Btn = cur2Ref.current
           
-          
-        //   activeBtn.classList.add('active1');
+        
         const cur = e.target;
             if(cur.tagName === 'BUTTON' && e.target.classList.contains('btn-1')){
                 curBtn.classList.add('click');
@@ -51,7 +43,6 @@ const Tab = () =>{
         
       }
     return(
-        <>
     <MDBContainer>
         <MDBRow className='justify-content-center m-2'>
     <MDBCol style={{padding:0}} md='6' className='p-0 border-0'>
@@ -64,25 +55,25 @@ const Tab = () =>{
     <Router >
     <div  ref={tabRef} id='tabItem'className='tabContent active1 m-2'>
     
-    <h5 >Hope I'll find love someday. God please I need your help</h5>
+    <h5 >More News</h5>
     
-    <MDBLink>There's God</MDBLink>
-    <MDBLink>There's God</MDBLink>
-    <MDBLink>There's God</MDBLink>
+    <MDBLink to='!#'>Hello World</MDBLink>
+    <MDBLink to='!#'>Hello World</MDBLink>
+    <MDBLink to='!#'>Hello World</MDBLink>
 
 </div>
 <div ref={tab2Ref}  className='tabContent m-2'>
-    <h5 >Hope I'll find love someday. God please I need your help Now please</h5>
+    <h5 >Client Relations</h5>
     
-    <MDBLink>There's God</MDBLink>
-    <MDBLink>There's God</MDBLink>
-    <MDBLink>There's God</MDBLink>
+    <MDBLink to='!#'>We are Here</MDBLink>
+    <MDBLink to='!#'>We are Here</MDBLink>
+    <MDBLink to='!#'>We Are Here</MDBLink>
    
 </div>
 </Router>
     </MDBContainer>
     
-</>
+
     )
 }
 export default Tab;

@@ -35,7 +35,7 @@ const ImageUrl = [
  {
      name: 'Investor & Treasury Services',
      url: Vault,
-     childLink: ['Slim\'s Tresury Services']
+     childLink: ['Slim\'s Treasury Services']
  }
 ]
 
