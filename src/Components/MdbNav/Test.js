@@ -42,12 +42,13 @@ import {useFetch} from '../MyHooks/useFetch'
                 
                 <section>
                 <MDBNavbar className='px-5 'color='indigo darken-4' dark expand='md' >
-                <div className="d-flex  align-self-center  h-100  position-absolute" style={{top:'8px',zIndex:'9000'}}>
-                <MDBNavbarBrand className='position-relative-lg my-auto float-sm-left' > 
+                <Navbar className='d-sm-block d-md-none'></Navbar>
+                <div className="  h-100  position-absolute" style={{top:'8px',left:'7vmin'}}>
+                <MDBNavbarBrand className=' float-sm-left' > 
                 <img src={Logo}  height= '100'alt="slim"></img>
                     </MDBNavbarBrand>
                 </div>
-                <Navbar className='d-sm-inline d-md-none'></Navbar>
+                
                     <MDBCollapse id="navbarCollapse3" isOpen={isOpen} navbar>
                     <MDBNavbarNav right className='pr-5' style={{fontSize:'1.2rem'}} >
                             <MDBNavItem >
