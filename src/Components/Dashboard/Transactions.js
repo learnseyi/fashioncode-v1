@@ -1,4 +1,5 @@
-import React,{useContext} from 'react';
+import React,{useContext,useState} from 'react';
+import ReactPaginate from 'react-paginate';
 import {
     MDBContainer,
     MDBRow,
@@ -10,13 +11,40 @@ import {
     MDBTableHead
 } from 'mdbreact';
 import { LoginContext } from '../Contexts/LoginContext';
+import './Transactions.css'
+
 
 
 const Transactions = ()=>{
-    const {authUser} = useContext(LoginContext)
-   
+    const {authUser} = useContext(LoginContext);
+    const [currentPage, setCurrentPage] = useState(0);
     let b =0;
     let c = 0;
+
+const PER_PAGE = 5;
+const offset = currentPage * PER_PAGE;
+const pageCount = Math.ceil(authUser.transaction.length / PER_PAGE);
+const transactions = authUser.transaction.slice(offset, offset + PER_PAGE).map((trans,i)=>{
+     
+        b = c + trans
+        c = b
+        return(
+            <tr key={i}>
+            <td><MDBBadge color={trans > 0 ? 'success': 'danger'}>{trans > 0 ? 'D':'W'}</MDBBadge></td>
+            <td>{new Date().toLocaleDateString()}</td>
+            <td>Mark</td>
+            <td>{trans.toLocaleString('en-US')}</td>
+            
+            <td>{b.toLocaleString('en-US')}</td>
+            </tr>
+     )   
+})
+
+         function handlePageClick({ selected: selectedPage }) {
+    setCurrentPage(selectedPage);
+}
+   
+    
     return(
         <MDBContainer>
             <MDBRow>
@@ -33,23 +61,22 @@ const Transactions = ()=>{
         </tr>
       </MDBTableHead>
       <MDBTableBody>
-      {authUser.transaction.map((trans,i)=>{
-                b = c + trans
-                c = b
-                return(
-          <tr key={i}>
-          <td><MDBBadge color={trans > 0 ? 'success': 'danger'}>{trans > 0 ? 'D':'W'}</MDBBadge></td>
-          <td>{new Date().toLocaleDateString()}</td>
-          <td>Mark</td>
-          <td>{trans.toLocaleString('en-US')}</td>
-         
-          <td>{b.toLocaleString('en-US')}</td>
-        </tr>
-                )
-            })}
-        
+          {transactions}
       </MDBTableBody>
     </MDBTable>
+    
+          <ReactPaginate
+        previousLabel={"← Previous"}
+        nextLabel={"Next →"}
+        pageCount={pageCount}
+        onPageChange={handlePageClick}
+        containerClassName={"pagination"}
+        previousLinkClassName={"pagination__link"}
+        nextLinkClassName={"pagination__link"}
+        disabledClassName={"pagination__link--disabled"}
+        activeClassName={"pagination__link--active"}
+      />
+          
                 </MDBCol>
                 <MDBCol md='3' className='p-2 '>
                     <MDBBtn className='rounded-pill w-75 shadow-lg'>Transfers</MDBBtn>

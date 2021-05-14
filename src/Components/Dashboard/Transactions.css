@@ -1,0 +1,17 @@
+.pagination {
+  border: 3px solid grey;
+  display: flex;
+  justify-content: space-around;
+}
+
+.pagination__link {
+  background: blue;
+  color: white !important;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.pagination__link--active {
+  background: yellowgreen;
+  padding: 0 2rem;
+}
