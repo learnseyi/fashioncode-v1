@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import {Route,Redirect} from 'react-router-dom';
 
 const ProtectedRoute = ({isAuth,component:Component,...rest})=>{
-    console.log(Component,isAuth)
+    console.log(isAuth)
     return (
         <Route 
     {...rest} 
-    render={(props)=>{
+    render={props=>{
+        console.log('I am protect',isAuth)
         if(isAuth){
             return(
                 <Component {...props}/>

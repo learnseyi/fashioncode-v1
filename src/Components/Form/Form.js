@@ -52,12 +52,8 @@ const LoginForm = (props)=>{
   </MDBRow>
 </MDBContainer>
                 <button type='button' className='close-form' onClick={handleLogin}>x</button> 
-                {isLoggedIn &&   <Redirect  to={{
-                     pathname:'/Dashboard',
-                     state: {from: props.location}
-                 }}
-                 />} 
-                  
+               
+                  {isLoggedIn && <Redirect to='/Dashboard'/>}
 </div>
       </>       
     )

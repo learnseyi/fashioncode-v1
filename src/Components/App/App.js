@@ -42,7 +42,7 @@ const App = (props)=>{
         })
           if(curUser[0].username === username && curUser[0].pass.toString() === pass){
             setAuthUser(curUser[0]);
-            setIsLoggedIn(!isLoggedIn)
+            setIsLoggedIn(true)
             enableScroll();
           }else{alert('invalid username or password')}
       }
@@ -51,12 +51,12 @@ const App = (props)=>{
         <LoginContext.Provider value={{isClicked,setIsClicked,handleLogin,setUsername,setIsLoggedIn,
         setPass,login,isLoggedIn,authUser,setAuthUser}}> 
          <BrowserRouter>
-         <Switch>
+         
          <Route exact path='/' component={HomePage}>
              <HomePage/>
          </Route> 
-         <ProtectedRoute   path='/Dashboard' isAuth={isLoggedIn}   component={Dashboard}/>
-         </Switch>
+         <ProtectedRoute   path='/Dashboard' isAuth={isLoggedIn} component={Dashboard}/>
+         
          </BrowserRouter>
          </LoginContext.Provider>
        </React.Fragment>
