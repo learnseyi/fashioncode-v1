@@ -75,10 +75,10 @@ import {useFetch} from '../MyHooks/useFetch'
                             <MDBNavLink activeClassName='active' exact to="/">Home</MDBNavLink>
                             </MDBNavItem>
                             <MDBNavItem >
-                            <MDBNavLink   to="/features">Features</MDBNavLink>
+                            <MDBNavLink   to="/about">About</MDBNavLink>
                             </MDBNavItem>
                             <MDBNavItem >
-                            <MDBNavLink to="/">Pricing</MDBNavLink>
+                            <MDBNavLink to="/">Services</MDBNavLink>
                             </MDBNavItem>
                             <MDBNavItem >
                             <MDBNavLink   to="/contact">Contact us</MDBNavLink>

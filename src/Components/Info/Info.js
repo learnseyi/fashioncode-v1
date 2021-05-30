@@ -1,6 +1,6 @@
-import React from 'react';
-import Image from './Images/imga.jpg';
+import React,{ Suspense, lazy } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import Image from './Images/imga.jpg'
 import { 
     MDBBox,
     MDBCol, 
@@ -9,7 +9,8 @@ import {
     MDBRow 
 } from 'mdbreact';
 
-
+// const Image = lazy(()=>import('./Images/imga-1.jpg'))
+// console.log(Image)
 
 const Info = () =>{
     return(

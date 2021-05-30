@@ -13,7 +13,7 @@ const AboutPage = ()=>{
 
     return(
         <BrowserRouter>
-        <h1>I am about page</h1>
+        <h1 className='text-center'>I am about page</h1>
         <NavLink onClick={goToHome}to='/'>Home Page</NavLink>
         </BrowserRouter>
         

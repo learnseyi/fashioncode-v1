@@ -5,7 +5,9 @@ import  {LoginContext}  from '../Contexts/LoginContext';
 import ProtectedRoute from './ProtectedRoute';
 import './App.css';
 import HomePage from '../Pages/HomePage';
+import AboutPage from '../Pages/AboutPage';
 import Dashboard from '../Dashboard/Dashboard';
+
 
 
 
@@ -55,6 +57,9 @@ const App = (props)=>{
          <Route exact path='/' component={HomePage}>
              <HomePage/>
          </Route> 
+         <Route exact path='/about' component={HomePage}>
+             <AboutPage/>
+         </Route>
          <ProtectedRoute   path='/Dashboard' isAuth={isLoggedIn} component={Dashboard}/>
          
          </BrowserRouter>
