@@ -10,7 +10,6 @@ import {
     MDBCollapse,
     MDBBtn,
     } from "mdbreact";
-import { Navbar } from 'reactstrap';
 import  {LoginContext}  from '../Contexts/LoginContext';
 import {useFetch} from '../MyHooks/useFetch'
 
@@ -41,16 +40,16 @@ import {useFetch} from '../MyHooks/useFetch'
             
                 
                 <section>
-                <MDBNavbar className='px-5 'color='indigo darken-4' dark expand='md' >
-                <Navbar className='d-sm-block d-md-none'></Navbar>
-                <div className="  h-100  position-absolute" style={{top:'8px',left:'7vmin'}}>
-                <MDBNavbarBrand className=' float-sm-left' > 
-                <img src={Logo}  height= '100'alt="slim"></img>
-                    </MDBNavbarBrand>
-                </div>
+                    
+                <MDBNavbar color='indigo darken-4' dark expand='md' >
+               
                 
-                    <MDBCollapse id="navbarCollapse3" isOpen={isOpen} navbar>
-                    <MDBNavbarNav right className='pr-5' style={{fontSize:'1.2rem'}} >
+                <MDBNavbarBrand className='position-absolute' style={{zIndex:1,top:10+'px'}} > 
+                <img src={Logo}  height= '100'alt="slim-logo" ></img>
+                 </MDBNavbarBrand>
+                
+                    
+                    <MDBNavbarNav right className='pr-5 d-sm-flex' style={{fontSize:'1.2rem'}} >
                             <MDBNavItem >
                                 <img style={{width:'65px'}}src={flag} alt={name}/>
                             </MDBNavItem>
@@ -60,25 +59,28 @@ import {useFetch} from '../MyHooks/useFetch'
                             <MDBNavItem>
                             </MDBNavItem>
                     </MDBNavbarNav>
-                    </MDBCollapse>
+                    
                     
                     <MDBBtn  color='success'  className=' z-depth-3 rounded-pill ' size="sm" onClick={handleLogin}>Login</MDBBtn>
                     <MDBNavbarToggler right onClick={toggle} />
                 </MDBNavbar>
                
-                <MDBNavbar className='d-none d-md-block' color='light' primary='true' expand='md' onMouseOver={hoverEffect} onMouseOut={moueseleaveEffect}>
-                    <MDBNavbarNav className='justify-content-center  align-item-center' right style={{fontSize:'1.3rem'}}>
-                            <MDBNavItem  className='ml-3' active >
+                <MDBNavbar className=' d-md-block' color='light' primary='true' expand='md' onMouseOver={hoverEffect} onMouseOut={moueseleaveEffect}>
+                <MDBCollapse id="navbarCollapse3" isOpen={isOpen} navbar>
+                    <MDBNavbarNav  className=" justify-content-center align-items-center" style={{fontSize:'1.3rem'}}>
+                            <MDBNavItem   active >
                             <MDBNavLink activeClassName='active' exact to="/">Home</MDBNavLink>
                             </MDBNavItem>
-                            <MDBNavItem className='ml-3'>
+                            <MDBNavItem >
                             <MDBNavLink   to="/aboutPage">Features</MDBNavLink>
                             </MDBNavItem>
-                            <MDBNavItem className='ml-3'>
+                            <MDBNavItem >
                             <MDBNavLink to="/">Pricing</MDBNavLink>
                             </MDBNavItem>
                     </MDBNavbarNav>
+                    </MDBCollapse>
                     </MDBNavbar>
+                    
                     </section>
                  
             

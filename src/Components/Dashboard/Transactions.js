@@ -49,7 +49,7 @@ const transactions = authUser.transaction.slice(offset, offset + PER_PAGE).map((
         <MDBContainer>
             <MDBRow>
                 <MDBCol md='2'></MDBCol>
-                <MDBCol md='7' className='px-5 '>
+                <MDBCol md='7'>
                 <MDBTable  hover>
       <MDBTableHead color="primary-color" textWhite>
         <tr>
