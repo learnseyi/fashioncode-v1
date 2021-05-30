@@ -62,7 +62,7 @@ import {useFetch} from '../MyHooks/useFetch'
                     </MDBNavbarNav>
                     
                     
-                    <MDBBtn  color='success'  className=' z-depth-3 rounded-pill ' size="sm" onClick={handleLogin}>Login</MDBBtn>
+                    <MDBBtn  color='success'  className=' z-depth-3 rounded-pill d-flex justify-content-center' size="sm" onClick={handleLogin}>Login</MDBBtn>
                     <MDBNavbarToggler right onClick={toggle} />
                 </MDBNavbar>
                

@@ -15,22 +15,27 @@ import {
 const JumbotronPage = () => {
     const [image,setImage] = useState(Image[0]);
     let [index,setIndex] = useState(0);
-    
-useEffect(()=>{
-    setTimeout(()=>{
+
+    const updateCarousel = ()=>{
+      setTimeout(()=>{
         if(index < Image.length-1){
             setIndex((prevInt)=>{
                 return prevInt + 1
             })
             setImage(Image[index])
-        }else{
-            setIndex((prevInt)=>{
-                return prevInt =  0
-            })
+        }else if(index === Image.length-1){
+            setIndex(0)
             setImage(Image[index])
         }
     },15000)
-},[index])
+
+    }
+    
+useEffect(()=>{
+
+  updateCarousel();
+  
+})
   return (
     <section>
     <MDBContainer style={{ padding: 0 }} fluid>
