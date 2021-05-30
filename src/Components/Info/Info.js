@@ -9,8 +9,6 @@ import {
     MDBRow 
 } from 'mdbreact';
 
-// const Image = lazy(()=>import('./Images/imga-1.jpg'))
-// console.log(Image)
 
 const Info = () =>{
     return(
