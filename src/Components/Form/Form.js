@@ -31,10 +31,14 @@ const LoginForm = (props)=>{
     return(<> 
             <div className='contact-form ' style={{...style}}>  
     <MDBContainer className='w-75'>
-  <MDBRow className='justify-content-center p-4'>
+  <MDBRow className='justify-content-center '>
     <MDBCol md="6" >
     <MDBCard className=''card-wrapper='true'>
         <MDBCardBody >
+          <div className="d-flex flex-row-reverse">
+          <button type='button' className='close-form' onClick={handleLogin}>x</button> 
+          </div>
+        
       <form>
         <p className="h5 text-center mb-4">Sign in</p>
         <div className="grey-text">
@@ -51,7 +55,7 @@ const LoginForm = (props)=>{
     </MDBCol>
   </MDBRow>
 </MDBContainer>
-                <button type='button' className='close-form' onClick={handleLogin}>x</button> 
+                
                
                   {isLoggedIn && <Redirect to='/Dashboard'/>}
 </div>

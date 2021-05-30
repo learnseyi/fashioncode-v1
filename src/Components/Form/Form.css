@@ -13,11 +13,11 @@
 .close-form {
   border-color: transparent;
   border-radius: 50px;
-  display: flex;
-  justify-content: flex-end;
+  /* display: flex;
+  justify-content: end; */
   height: 50px 50px;
   background: transparent;
-  position: relative;
-  top: -305px;
-  left: 800px;
+  /* position: relative;
+  top: -302px;
+  left: 800px; */
 }

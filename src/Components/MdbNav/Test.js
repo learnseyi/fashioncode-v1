@@ -1,6 +1,7 @@
 import React,{useState,useContext} from 'react';
 import Logo from './logo.png'
 import {
+    MDBContainer,
     MDBNavbar, 
     MDBNavbarBrand, 
     MDBNavbarNav, 
@@ -44,16 +45,16 @@ import {useFetch} from '../MyHooks/useFetch'
                 <MDBNavbar color='indigo darken-4' dark expand='md' >
                
                 
-                <MDBNavbarBrand className='position-absolute' style={{zIndex:1,top:10+'px'}} > 
+                <MDBNavbarBrand className='position-absolute justify-content-start' style={{zIndex:1,top:10+'px'}} > 
                 <img src={Logo}  height= '100'alt="slim-logo" ></img>
                  </MDBNavbarBrand>
                 
                     
-                    <MDBNavbarNav right className='pr-5 d-sm-flex' style={{fontSize:'1.2rem'}} >
+                    <MDBNavbarNav right className=' d-sm-flex'  >
                             <MDBNavItem >
                                 <img style={{width:'65px'}}src={flag} alt={name}/>
                             </MDBNavItem>
-                            <MDBNavItem>
+                            <MDBNavItem className='d-md-inline d-none mr-5'>
                             <h5 style={{color:'white'}}>{date.toDateString()}</h5>
                             </MDBNavItem>
                             <MDBNavItem>
@@ -66,18 +67,24 @@ import {useFetch} from '../MyHooks/useFetch'
                 </MDBNavbar>
                
                 <MDBNavbar className=' d-md-block' color='light' primary='true' expand='md' onMouseOver={hoverEffect} onMouseOut={moueseleaveEffect}>
+                    
                 <MDBCollapse id="navbarCollapse3" isOpen={isOpen} navbar>
-                    <MDBNavbarNav  className=" justify-content-center align-items-center" style={{fontSize:'1.3rem'}}>
+                    <MDBContainer className='w-50'>
+                    <MDBNavbarNav   style={{fontSize:'1.3rem'}}>
                             <MDBNavItem   active >
                             <MDBNavLink activeClassName='active' exact to="/">Home</MDBNavLink>
                             </MDBNavItem>
                             <MDBNavItem >
-                            <MDBNavLink   to="/aboutPage">Features</MDBNavLink>
+                            <MDBNavLink   to="/features">Features</MDBNavLink>
                             </MDBNavItem>
                             <MDBNavItem >
                             <MDBNavLink to="/">Pricing</MDBNavLink>
                             </MDBNavItem>
+                            <MDBNavItem >
+                            <MDBNavLink   to="/contact">Contact us</MDBNavLink>
+                            </MDBNavItem>
                     </MDBNavbarNav>
+                    </MDBContainer>
                     </MDBCollapse>
                     </MDBNavbar>
                     
