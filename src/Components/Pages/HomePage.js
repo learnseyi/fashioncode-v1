@@ -1,4 +1,4 @@
-import React,{lazy,Suspense} from 'react';
+import React from 'react';
 import Test from '../MdbNav/Test';
 import JumbotronPage from '../Jumbotron/Jumbotron'
 import Card from '../Card/Card';
@@ -7,9 +7,9 @@ import About from '../About/About';
 import Operations from '../Operations/Operations'
 import Footer from '../Footer/Footer';
 import LoginForm  from '../Form/Form';
+import Credentials from '../Credentials/Credentials';
 
 
-const info = lazy(()=>import('../Info/Info'))
 const HomePage = ()=>{
     
     return(
@@ -19,13 +19,11 @@ const HomePage = ()=>{
          <Test />
          <JumbotronPage/>
          <Card />
-         <Suspense fallback={<div>Loading...</div>}>
          <Info/>
-      </Suspense>
-         
          <About/>
          <Operations/>
          <Footer/>
+         <Credentials/>
           
          </>
     )

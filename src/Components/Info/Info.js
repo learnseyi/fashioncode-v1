@@ -1,6 +1,5 @@
-import React,{ Suspense, lazy } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Image from './Images/imga.jpg'
+import Image from './Images/image-1.jpg'
 import { 
     MDBBox,
     MDBCol, 
@@ -20,7 +19,7 @@ const Info = () =>{
                 <MDBContainer >
                        <MDBRow style={{border:'2px solid lightgreen'}}>
                            <MDBCol md='6' style={{background:`url(${Image})`,
-                           backgroundPosition:'center', backgroundSize:'cover', height:'25rem',width:'100%',backgroundRepeat:'no-repeat'}}>
+                           backgroundPosition:'center', backgroundSize:'cover', height:'25rem',width:'27rem',backgroundRepeat:'no-repeat'}}>
                            </MDBCol >
                            <MDBCol md='6'  className='text-center ' style={{padding:0}}>
                             <h2 className='px-auto'>We are here for you</h2>

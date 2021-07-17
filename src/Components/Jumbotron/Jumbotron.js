@@ -27,7 +27,7 @@ const JumbotronPage = () => {
             setIndex(0)
             setImage(Image[index])
         }
-    },15000)
+    },10000)
 
     }
     
@@ -43,7 +43,7 @@ useEffect(()=>{
         <MDBCol >
         <MDBAnimation type="zoomIn" duration="4s" delay="2s" >
           <MDBJumbotron style={{ padding: 0 }}>
-      <MDBCol className=" text-center  px-4 " style={{ backgroundImage: `url(${image})`,backgroundSize: 'cover',
+      <MDBCol className=" text-center  px-4 bck" style={{ backgroundImage: `url(${image})`,backgroundSize: 'cover',
       backgroundRepeat:'no-repeat',maxWidth:'100%',height:'auto' ,backgroundPosition:'center'}}>
           <MDBAnimation type="slideInDown" duration="4s" delay="2s" >
               <MDBCol className="py-5">
