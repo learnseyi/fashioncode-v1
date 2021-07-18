@@ -10,10 +10,11 @@ import LoginForm  from '../Form/Form';
 import Credentials from '../Credentials/Credentials';
 
 
+
 const HomePage = ()=>{
     
     return(
-        <>
+        <React.Fragment>
          
             <LoginForm/>
          <Test />
@@ -25,7 +26,7 @@ const HomePage = ()=>{
          <Footer/>
          <Credentials/>
           
-         </>
+         </React.Fragment>
     )
      
     }

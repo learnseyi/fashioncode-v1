@@ -1,23 +1,14 @@
-import React,{useState,useEffect,useCallback} from 'react';
+import React,{useState,useEffect,useCallback, useRef} from 'react';
 import useWindowDimensions from '../MyHooks/useWindowDimensions';
 import './credentials.css';
-import { 
-    MDBBtn, 
-    MDBCard, 
-    MDBCardBody, 
-    MDBCardTitle, 
-    MDBCardText, 
-    MDBCol, 
-    MDBIcon,
-    MDBContainer,
-    MDBRow,
-    } from 'mdbreact';
+import credInfo from './credInfo.js';
+import { MDBBtn, MDBCardText, MDBIcon, MDBContainer } from 'mdbreact';
 
-    // -39.2 +'vw'
  
-
+console.log(credInfo)
 const Credentials = ()=>{
     const {width} = useWindowDimensions();
+    const credRef = useRef()
     const rightOffset = useCallback(()=>{
             let offset;
                 console.log(width)
@@ -40,79 +31,65 @@ const Credentials = ()=>{
         position: 'absolute',
         top: 50 +'%',
         right: right,
-        width: 40 + 'em',
+        width: 20 + 'rem',
+        display: 'none',
         transition: 'all 2s ease',
+    }
+    const showCred = ()=>{
+        console.log(credRef.current.style)
+        setTimeout(setRight(0),25000)
+        credRef.current.style.display = 'block'
+        
+    }
+    const hideCred = ()=>{
+        credRef.current.style.display = 'none'
+        setRight(rightOffset)
     }
 useEffect(()=>{
     rightOffset();
 },[rightOffset])
- 
-    return( 
-       
-        <MDBCol className="credentials-container"  
-        style={detailsStyle} >
-        <MDBBtn className='credentials-btn' 
-        
-        onClick={()=>setRight(-8.5 + 'em')} 
+// ()=>setRight(-8.5 + 'em')
+    return( <React.Fragment>
+        <div className='test-2'>
+       <MDBBtn className='credentials-btn' 
+        onClick={showCred} 
         href="#">Login Credentials</MDBBtn>
-        <MDBCard className = 'users'style={{ width: "60vw" ,background:"yellow",textAlign:"center"}}>
+        <div className="credentials-container" 
+        ref={credRef} 
+        style={detailsStyle} >
+        <MDBContainer size = 'sm'className = 'users'style={{ background:"yellow",textAlign:"center"}}>
         <MDBBtn 
-        className='position-absolute top-0 reset-btn' 
+        className='position-absolute top-0 left-0 reset-btn' 
         outline 
-        onClick={()=>setRight(rightOffset)}
+        onClick={hideCred}
         color="danger"
         size='sm'>
             <MDBIcon icon="times" />
         </MDBBtn>
-          <MDBCardBody>
-            <MDBCardTitle >
-                <MDBContainer >
-                    <MDBRow className="justify-content-center flex-column" style={{width: '18em'}} >
-                    <h6 className='text-center mt-4'>LOGIN CREDENTIALS</h6>
-                    <MDBCardText className="mb-0">
-                    <p>Please use credentials below to access restricted area</p>
+        <div className='credentials pt-5'>
+                <h5 className='fw-bolder'>Login Credentials</h5>
+                <p>Please use credentials below to access restricted area</p>
+           {
+               credInfo.map((user,i)=>{
+                   const {name,username,pass} = user;
+                   return(
+                    <MDBCardText className='text-left user-info py-3 mb-3'>
+                    <p>user {i + 1}:</p>
+                    <p> name: &emsp;&emsp;&emsp;{name} </p>
+                    <p>username: &emsp; {username}</p>
+                    <p>password: &emsp;&nbsp;{pass}</p>
                     </MDBCardText>
-                    <MDBCol className='d-flex justify-content-lg-center'>
-                    <MDBCardText className='text-left user-info'>
-                        <p>USER ONE:</p>
-                        <p> Name: &emsp;&emsp;&emsp;John Doe </p>
-                        <p>Username: &emsp; Jdoe</p>
-                        <p>password: &emsp;&nbsp;1111</p>
-                        </MDBCardText>
-                    </MDBCol>
-                    <MDBCol className='mt-3'>
-                    <MDBCardText className='text-left user-info'>
-                        <p>USER TWO:</p>
-                        <p> Name: &emsp;&emsp;&emsp;Jessica Davis </p>
-                        <p>Username: &emsp;  jdavis</p>
-                        <p>password: &emsp;&nbsp;2222</p>
-                        </MDBCardText>
-                    </MDBCol>
-                    <MDBCol className='mt-3 d-flex justify-content-lg-center'>
-                    <MDBCardText className='text-left user-info'>
-                        <p>USER THREE:</p>
-                        <p> Name: &emsp;&emsp;&emsp;Steven Williams </p>
-                        <p>Username: &emsp; swilliams</p>
-                        <p>password: &emsp;&nbsp;3333</p>
-                        </MDBCardText>
-                    </MDBCol>
-                    <MDBCol className='mt-3 '>
-                    <MDBCardText className='text-left user-info'>
-                        <p>USER FOUR:</p>
-                        <p> Name: &emsp;&emsp;&emsp;Sarah Smith </p>
-                        <p>Username: &emsp; ssmith</p>
-                        <p>password: &emsp;&nbsp;4444</p>
-                        </MDBCardText>
-                    </MDBCol>
-                    </MDBRow>
-                
-                </MDBContainer>
-                    
-            </MDBCardTitle>
-            
-          </MDBCardBody>
-        </MDBCard>
-      </MDBCol>
+                   )
+               })
+           }     
+        
+        </div>
+        
+        </MDBContainer>
+      </div>
+      </div>
+      </React.Fragment>
     )
 }
 export default Credentials;
+

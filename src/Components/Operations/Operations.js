@@ -1,5 +1,6 @@
 import './Operations.css';
 import React from 'react';
+import Credentials from '../Credentials/Credentials';
 import { BrowserRouter as Router } from 'react-router-dom';
 import {
     MDBContainer,
@@ -38,7 +39,9 @@ const Operations = ()=>{
             </MDBRow>
         </MDBContainer>
         </MDBBox>
+        <Credentials/>
     </div>
+    
 }
 
 export default Operations;
