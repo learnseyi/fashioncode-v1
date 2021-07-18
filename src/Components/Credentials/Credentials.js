@@ -50,7 +50,6 @@ useEffect(()=>{
 },[rightOffset])
 // ()=>setRight(-8.5 + 'em')
     return( <React.Fragment>
-        <div className='test-2'>
        <MDBBtn className='credentials-btn' 
         onClick={showCred} 
         href="#">Login Credentials</MDBBtn>
@@ -87,7 +86,7 @@ useEffect(()=>{
         
         </MDBContainer>
       </div>
-      </div>
+      
       </React.Fragment>
     )
 }
