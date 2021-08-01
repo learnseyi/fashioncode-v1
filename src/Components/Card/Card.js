@@ -23,7 +23,7 @@ const Cards = () =>{
               return(
                 <MDBCol  key={Date.now().toString()+ title}md="4" className="mb-4 mb-md-0 ">
                 <section>
-                  <MDBCard  narrow  >
+                  <MDBCard  narrow  style={{background: '#f4f4f4'}}>
                     <MDBView hover cascade >
                     <MDBCardTitle className='pt-4 text-center' >{title}</MDBCardTitle>
                       <MDBCardImage key={Date.now().toString() }className='p-3' src={CardImage[i]} alt="card image" top></MDBCardImage>

@@ -5,13 +5,12 @@ import credInfo from './credInfo.js';
 import { MDBBtn, MDBCardText, MDBIcon, MDBContainer } from 'mdbreact';
 
  
-console.log(credInfo)
+
 const Credentials = ()=>{
     const {width} = useWindowDimensions();
     const credRef = useRef()
     const rightOffset = useCallback(()=>{
             let offset;
-                console.log(width)
                 if(width <= 768){
                     offset = (-96 +'%')
                 }else if(width <= 1024){

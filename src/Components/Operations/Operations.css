@@ -1,4 +1,11 @@
 .wrapper {
-  background: white !important;
+  background: #f4f4f4 !important;
+
   z-index: 1000;
+}
+.wrapper h4 {
+  font-size: 1.25rem;
+}
+.nav-link {
+  padding: 0;
 }

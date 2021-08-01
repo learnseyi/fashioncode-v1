@@ -1,25 +1,26 @@
 .tabContent {
-  color: royalblue;
+  color: #000;
   display: none;
   padding-top: 20px;
   text-align: left;
-  background-color: white;
+  background-color: #f4f4f4;
 }
 .border01 {
   background-color: transparent !important;
-  color: royalblue;
+  color: lightgreen;
   border-width: medium;
   border-bottom: none !important;
   outline: none;
   cursor: pointer;
   font-size: 20px;
+  font-weight: 500;
   padding: 15px;
 }
 .border01.click {
-  background-color: white !important;
-  color: royalblue;
+  background: #00c851 !important;
+  color: #fff;
   border-width: medium;
-  border-bottom: 2px solid royalblue !important;
+  border-bottom: 2px solid lightgreen !important;
   outline: none;
   cursor: pointer;
   font-size: 20px;
@@ -28,7 +29,7 @@
 .active1 {
   color: royalblue;
   display: flow-root;
-  padding-top: 20px;
+  padding: 20px 20px;
   text-align: left;
-  background-color: white;
+  background-color: #f4f4f4;
 }

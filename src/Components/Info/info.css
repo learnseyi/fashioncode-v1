@@ -1,0 +1,27 @@
+hr {
+  width: 50%;
+  margin: auto;
+}
+.info-title {
+  font-weight: 500;
+  text-shadow: 7px 5px 21px 6px #bfbfbf !important;
+}
+.info-title:after {
+  content: "";
+  border-bottom: 2px solid lightgreen;
+  display: block;
+  margin: auto !important;
+  width: 20%;
+  padding-top: 7px;
+}
+.sub-link {
+  color: #000 !important;
+}
+.info-text {
+  font-size: 1.1rem;
+}
+.info-link {
+  color: lightgreen;
+  margin: 0 !important;
+  text-align: center;
+}
