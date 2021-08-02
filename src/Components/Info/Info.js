@@ -12,7 +12,7 @@ import {
 
 
 const Info = () =>{
-    return(
+    return(<section className ='info-section'>
         <Router>
             <MDBBox style={{backgroundColor:'#f4f4f4'}}>
         <MDBContainer  className='p-5'  >
@@ -21,7 +21,7 @@ const Info = () =>{
                 <MDBContainer >
                        <MDBRow style={{border:'2px solid lightgreen'}}>
                            <MDBCol md='6' style={{background:`url(${Image})`,
-                           backgroundPosition:'center', backgroundSize:'cover', height:'27rem',width:'27rem',backgroundRepeat:'no-repeat'}}>
+                           backgroundPosition:'center', backgroundSize:'cover', height:'30rem',width:'27rem',backgroundRepeat:'no-repeat'}}>
                            </MDBCol >
                            <MDBCol md='6'  className='text-center ' style={{padding:0}}>
                             <h4 className='px-auto mt-3 info-title'>We are here for you</h4>
@@ -62,6 +62,7 @@ const Info = () =>{
         </MDBContainer>
         </MDBBox>
         </Router>
+        </section>
     )
 }
 

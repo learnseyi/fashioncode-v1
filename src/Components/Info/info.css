@@ -1,6 +1,7 @@
-hr {
+.info-section hr {
   width: 50%;
   margin: auto;
+  background-color: lightgreen !important;
 }
 .info-title {
   font-weight: 500;
@@ -22,6 +23,6 @@ hr {
 }
 .info-link {
   color: lightgreen;
-  margin: 0 !important;
+  margin: 2em auto 0 auto !important;
   text-align: center;
 }
