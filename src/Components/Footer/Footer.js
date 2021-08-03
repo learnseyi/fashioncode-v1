@@ -58,7 +58,7 @@ const FooterPage = () => {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
-      <div className="footer-copyright text-center py-3">
+      <div className="footer-copyright text-center py-3 grey darken-4">
         <MDBContainer fluid>
           &copy; {new Date().getFullYear()} Copyright: <a href="#Home"> Slim's Financial </a>
         </MDBContainer>
