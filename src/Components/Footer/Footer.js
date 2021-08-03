@@ -25,7 +25,7 @@ const FooterPage = () => {
           </MDBCol>
           <MDBCol md="6">
             <div className='footer-title'>
-            <h5 >Services</h5>
+            <h5 >our services</h5>
             <MDBRow>
             <MDBCol md="6">
             <ul>
