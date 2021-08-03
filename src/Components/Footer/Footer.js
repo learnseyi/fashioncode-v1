@@ -30,26 +30,26 @@ const FooterPage = () => {
             <MDBCol md="6">
             <ul>
               <li >
-                <a href="#!">banking</a>
+                <a href="#!">&mdash; &nbsp;banking</a>
               </li>
               <li >
-                <a href="#!">investment management</a>
+                <a href="#!">&mdash; &nbsp;investment management</a>
               </li>
               <li >
-                <a href="#!">insurance</a>
+                <a href="#!">&mdash; &nbsp;insurance</a>
               </li>
             </ul>
             </MDBCol>
             <MDBCol md="6">
             <ul>
               <li >
-                <a href="#!">Investor & Treasury Services</a>
+                <a href="#!">&mdash; &nbsp;Investor & Treasury Services</a>
               </li>
               <li >
-                <a href="#!">wealth management</a>
+                <a href="#!">&mdash; &nbsp;wealth management</a>
               </li>
               <li >
-                <a href="#!">capital markets</a>
+                <a href="#!">&mdash; &nbsp;capital markets</a>
               </li>
             </ul>
             </MDBCol>

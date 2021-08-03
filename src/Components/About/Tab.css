@@ -7,7 +7,7 @@
 }
 .border01 {
   background-color: transparent !important;
-  color: lightgreen;
+  color: #000;
   border-width: medium;
   border-bottom: none !important;
   outline: none;

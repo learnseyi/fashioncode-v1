@@ -27,17 +27,11 @@ const Tab = () =>{
                 cur2Btn.classList.remove('click')
                   activeBtn.classList.add('active1');
                   activeBtn2.classList.remove('active1');
-                  
-                 
-                  
-                console.log('I am active')
-                console.log(activeBtn.classList)
             }else if(e.target.tagName === 'BUTTON' && e.target.classList.contains('btn-2')){
                 curBtn.classList.remove('click');
                cur2Btn.classList.add('click');
                 activeBtn.classList.remove('active1')
                 activeBtn2.classList.add('active1')
-                console.log('I am:',activeBtn2)
             }
 
         
@@ -49,7 +43,7 @@ const Tab = () =>{
         <button  ref={curRef} className='btn-1  w-100 text-center border01  border-0 click' onClick={handleTab}>News & Reviews</button>
         </MDBCol >
         <MDBCol style={{padding:0}} md='6' className='p-0'>
-        <button   ref={cur2Ref} className='btn-2   w-100 text-center border01  border-0' onClick={handleTab}>Middle</button>
+        <button   ref={cur2Ref} className='btn-2   w-100 text-center border01  border-0' onClick={handleTab}>Investment Updates</button>
     </MDBCol>
     </MDBRow>
     <Router >

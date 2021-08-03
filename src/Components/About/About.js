@@ -20,8 +20,6 @@ const About = ()=>{
         if(e.target.tagName === 'BUTTON'){
             setIsDisplay(!isDisplay);
             wrapper.classList.toggle('open')
-            console.log(wrapper)
-            
         }
         
     }
