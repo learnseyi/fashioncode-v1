@@ -2,3 +2,23 @@
   background-color: lightgreen !important;
   font-weight: 600;
 } */
+.footer-title h5 {
+  margin: 1em 2em !important;
+  font-size: medium;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.footer-title h5::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #fff;
+  margin-top: 0.5em;
+  width: 20%;
+}
+.footer-title ul {
+  list-style-type: none !important;
+}
+.footer-title li {
+  margin-bottom: 1em !important;
+  text-transform: uppercase;
+}

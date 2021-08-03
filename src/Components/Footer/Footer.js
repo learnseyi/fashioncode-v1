@@ -7,25 +7,54 @@ const FooterPage = () => {
     <MDBFooter color='indigo darken-4' className="font-small pt-4">
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
-          <MDBCol md="6">
-            <h5 className="footer-title">About Slim's Financial</h5>
-            <h5>
-                About us
-            </h5>
-          </MDBCol>
-          <MDBCol md="6">
-            <h5 className="title">Links</h5>
+          <MDBCol md="6" >
+            <div className="footer-title">
+            <h5 >About Slim's Financial</h5>
             <ul>
-              <li className="list-unstyled">
-                <a href="#!">Link 1</a>
+              <li>
+                <a href='#!'>Who We Are</a>
               </li>
-              <li className="list-unstyled">
-                <a href="#!">Link 2</a>
+              <li>
+              <a href='#!'>What we do</a>
               </li>
-              <li className="list-unstyled">
-                <a href="#!">Link 3</a>
+              <li>
+              <a href='#!'>Where we are</a>
               </li>
             </ul>
+            </div>
+          </MDBCol>
+          <MDBCol md="6">
+            <div className='footer-title'>
+            <h5 >Services</h5>
+            <MDBRow>
+            <MDBCol md="6">
+            <ul>
+              <li >
+                <a href="#!">banking</a>
+              </li>
+              <li >
+                <a href="#!">investment management</a>
+              </li>
+              <li >
+                <a href="#!">insurance</a>
+              </li>
+            </ul>
+            </MDBCol>
+            <MDBCol md="6">
+            <ul>
+              <li >
+                <a href="#!">Investor & Treasury Services</a>
+              </li>
+              <li >
+                <a href="#!">wealth management</a>
+              </li>
+              <li >
+                <a href="#!">capital markets</a>
+              </li>
+            </ul>
+            </MDBCol>
+            </MDBRow>
+            </div>
           </MDBCol>
         </MDBRow>
       </MDBContainer>
