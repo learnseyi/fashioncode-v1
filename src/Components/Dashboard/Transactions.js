@@ -1,4 +1,4 @@
-import React,{useContext,useState} from 'react';
+import React,{useCallback, useContext,useEffect,useState} from 'react';
 import ReactPaginate from 'react-paginate';
 import {
     MDBContainer,
@@ -18,23 +18,32 @@ import './Transactions.css'
 const Transactions = ()=>{
     const {authUser} = useContext(LoginContext);
     const [currentPage, setCurrentPage] = useState(0);
-    let [balanceCO,setBalanceCO] = useState(0);
+    const [balanceCO,setBalanceCO] = useState(0);
+    const [authTransaction,setAutTransaction] = useState([]);
+    const transaction = authUser.transaction;
+    const retrieveTransaction = useCallback(()=>{
+        transaction.map(trans=>{
+            return setAutTransaction(authTransaction =>[...authTransaction,trans])
+        })
+    },[transaction])
+   
     let curBalance = 0;
     let runningBalance = 0;
     const transList = [];
 const PER_PAGE = 5;
 const offset = currentPage * PER_PAGE;
-const pageCount = Math.ceil(authUser.transaction.length / PER_PAGE);
-const transactions = authUser.transaction.slice(offset, offset + PER_PAGE).map((trans,i)=>{
+const pageCount = Math.ceil(authTransaction.length / PER_PAGE);
+const transactions = authTransaction.slice(offset, offset + PER_PAGE).map(({amount: trans},i)=>{
             runningBalance =  ( curBalance !== 0 ) ? curBalance : balanceCO; // 
             (balanceCO === 0 && runningBalance !== balanceCO) || transList.push(trans);
             trans = transList.length ? transList.reduce((prev,next)=>prev + next,0) : trans;
             curBalance =  runningBalance + trans;
+
         return(
             <tr key={i}>
             <td><MDBBadge color={trans > 0 ? 'success': 'danger'}>{trans > 0 ? 'D':'W'}</MDBBadge></td>
             <td>{new Date().toLocaleDateString()}</td>
-            <td>Mark</td>
+            <td>{authUser.transaction[i].description}</td>
             <td>{!transList.length ? trans.toLocaleString('en-US') : transList.pop().toLocaleString('en-US')}</td>
             
             <td>{ curBalance.toLocaleString('en-US')}</td>
@@ -46,6 +55,9 @@ const transactions = authUser.transaction.slice(offset, offset + PER_PAGE).map((
            balanceCO !== 0 ? setBalanceCO(0) : setBalanceCO(curBalance)  // update balance carried over on transaction list page change
     setCurrentPage(selectedPage);
 }
+useEffect(()=>{
+    retrieveTransaction();
+},[retrieveTransaction])
   
     return(
         <MDBContainer>

@@ -1,4 +1,4 @@
-import React,{useContext} from 'react';
+import React,{useContext,useState,useEffect, useCallback} from 'react';
 import './Dashboard.css'
 import { 
     MDBContainer,
@@ -6,10 +6,19 @@ import {
     MDBCol
  } from 'mdbreact';
 import {LoginContext} from '../Contexts/LoginContext'
-
 const Display = ()=>{
+    const [userTransaction,setUserTransaction] = useState([]);
     const {authUser} = useContext(LoginContext)
-    const Balance = authUser.transaction.reduce((prev,next)=> prev + next,0)
+    const transaction = authUser.transaction;
+    const Balance = userTransaction.reduce((prev,next)=> prev + next,0)
+   const getTransaction = useCallback(()=>{
+       transaction.forEach((trans,i)=>{
+           return setUserTransaction(userTransaction =>[...userTransaction,trans.amount]);
+       })
+   },[transaction])
+    useEffect(()=>{
+        getTransaction();
+    },[getTransaction])
     return(
         <MDBContainer fluid>
             <h1>Welcome {authUser.owner}</h1>
@@ -20,7 +29,7 @@ const Display = ()=>{
                        <h3>{Balance.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}</h3>
                     </div>
                     <div className='mb-3'>
-                    <h4>savings</h4>
+                    <h3>savings</h3>
                     </div>
                     
                 </MDBCol>
